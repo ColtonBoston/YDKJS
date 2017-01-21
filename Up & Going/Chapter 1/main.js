@@ -28,9 +28,14 @@ while (balance > 0 && stillShopping){
 
   if (buyPhone && balance >= PHONE_PRICE){
     currentCharge += PHONE_PRICE;
-    phonesBought++;
-    var buyAccessory = confirm('Your balance: ' + formatAmount(balance) + '.\nTotal: ' + formatAmount(currentCharge) + '\nWould you like to buy an accessory for $' + ACCESSORY_PRICE + '?');
 
+    var buyAccessory = confirm('Your balance: ' + formatAmount(balance)
+    + '.\nPurchase total: ' + formatAmount(currentCharge)
+    + '\nPhones bought: ' + phonesBought
+    + '\nAccessories bought: ' + accessoriesBought
+    + '\nWould you like to add an accessory for $' + ACCESSORY_PRICE + '?');
+
+    phonesBought++;
     if (buyAccessory && balance >= ACCESSORY_PRICE){
       currentCharge += ACCESSORY_PRICE;
       accessoriesBought++;
